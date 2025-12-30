@@ -23,7 +23,7 @@ jobs:
       # - run: echo "$GITHUB_TOKEN" | ko login ghcr.io --username "dummy" --password-stdin
       #   env:
       #     GITHUB_TOKEN: ${{ github.token }}
-      - run: ko build ./cmd/app -P -t "$VERSION"
+      - run: ko build ./cmd/app --bare -t "$VERSION"
         env:
           GITHUB_TOKEN: ${{ github.token }}
           VERSION: ${{ github.ref_name }}
