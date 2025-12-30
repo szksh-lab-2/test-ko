@@ -34,4 +34,6 @@ jobs:
           digest=$(docker inspect --format='{{index .RepoDigests 0}}' "$KO_DOCKER_REPO:$GITHUB_REF_NAME")
           echo "IMAGE_DIGEST=$digest" >> "$GITHUB_ENV"
       - run: cosign sign "$IMAGE_DIGEST"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
