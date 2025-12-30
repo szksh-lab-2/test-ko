@@ -1,0 +1,8 @@
+builds:
+  - id: foo
+    dir: .  # default is .
+    main: ./cmd/app
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -X main.version={{.Env.VERSION}}

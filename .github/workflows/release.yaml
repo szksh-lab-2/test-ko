@@ -1,0 +1,30 @@
+---
+name: Release
+on:
+  push:
+    tags: [v*]
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: aquaproj/aqua-installer@v4.0.4
+        with:
+          aqua_version: v2.56.1
+      - run: ko version
+        env:
+          AQUA_GITHUB_TOKEN: ${{ github.token }}
+      - run: echo KO_DOCKER_REPO=ghcr.io/${GITHUB_REPOSITORY} >> "$GITHUB_ENV"
+      # - run: echo "$GITHUB_TOKEN" | ko login ghcr.io --username "dummy" --password-stdin
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }}
+      - run: ko build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          VERSION: ${{ github.ref_name }}
+
