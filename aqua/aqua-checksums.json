@@ -31,6 +31,31 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/sigstore/cosign/v3.0.3/cosign-darwin-amd64",
+      "checksum": "6C75981E85E081A73F0B4087F58E0AD5FD4712C71B37FA0B6AD774C1F965BAFA",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sigstore/cosign/v3.0.3/cosign-darwin-arm64",
+      "checksum": "38349E45A8BB0D1ED3A7AFFB8BDD2E9D597CEE08B6800C395A926B4D9ADB84D2",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sigstore/cosign/v3.0.3/cosign-linux-amd64",
+      "checksum": "052363A0E23E2E7ED53641351B8B420918E7E08F9C1D8A42A3DD3877A78A2E10",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sigstore/cosign/v3.0.3/cosign-linux-arm64",
+      "checksum": "81398231362031E3C7AFD6A7508C57049460CD7E02736F1EBE89A452102253E5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/sigstore/cosign/v3.0.3/cosign-windows-amd64.exe",
+      "checksum": "2593655025B52B5B1C99E43464459B645A3ACBE5D4A5A9F3A766E77BEEC5A441",
+      "algorithm": "sha256"
+    },
+    {
       "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.449.0/registry.yaml",
       "checksum": "B117D7C0B07300C422EC7C9A40810E671A0C50ECFB94857BF2121B2DDFD47360",
       "algorithm": "sha256"
