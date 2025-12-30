@@ -33,7 +33,7 @@ jobs:
       - run: |
           digest=$(docker inspect --format='{{index .RepoDigests 0}}' "$KO_DOCKER_REPO:$GITHUB_REF_NAME")
           echo "IMAGE_DIGEST=$digest" >> "$GITHUB_ENV"
-      - run: cosign sign "$IMAGE_DIGEST"
+      - run: echo "$GITHUB_TOKEN" | docker login ghcr.io -u "dummy" --password-stdin
         env:
           GITHUB_TOKEN: ${{ github.token }}
-
+      - run: cosign sign "$IMAGE_DIGEST"
